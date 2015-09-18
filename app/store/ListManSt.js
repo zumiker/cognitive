@@ -1,7 +1,7 @@
 Ext.define('AM.store.ListManSt', {
     extend: 'Ext.data.Store',
     model: 'AM.model.ListManM',
-    autoLoad: true,
+    //autoLoad: true,
     proxy: {
         type: 'ajax',
         url: 'php/get_man.php',

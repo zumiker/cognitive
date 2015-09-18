@@ -1,7 +1,8 @@
 Ext.define('AM.store.ListEduSt', {
     extend: 'Ext.data.Store',
     model: 'AM.model.ListEduM',
-    autoLoad: true,
+    //autoLoad: true,
+    storeId:'ListEduSt',
     proxy: {
         type: 'ajax',
         url: 'php/get_edu.php',

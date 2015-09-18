@@ -5,12 +5,8 @@ if ($mysqli->connect_errno)
 {printf("Connectfailed: %s\n", $conn->connect_error);
 exit();}
 
-$sql = "SELECT S.STAID,
-			   S.MANID,
-			   S.STANAME,
-			   M.MANNAME
-		FROM STATE S, MAN M
-		WHERE S.MANID = M.MANID";
+$sql = "SELECT DISTINCT STANAME  
+		FROM STATE";
 
 $result = $mysqli->query($sql);
 
@@ -19,10 +15,7 @@ $i = 0;
 
 while ($row = $result->fetch_row())
 {
-	$cur[$i]['STAID'] = $row[0];
-	$cur[$i]['MANID'] = $row[1];
-	$cur[$i]['STANAME'] = $row[2];
-	$cur[$i]['MANNAME'] = $row[3];
+	$cur[$i]['STANAME'] = $row[0];
 	$i++;
 }
 
